@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public class Template implements Serializable {
+public class Template{
     int live_level;
     static int pole;
     transient Sord s;

@@ -3,12 +3,13 @@ import java.io.*;
 public class Main {
 
     public static void main(String... args) throws Exception {
-        Template temp1=new Template();
+        TemplateChild temp1=new TemplateChild();
         temp1.live_level=100;
         temp1.pole=1555;
         Sord ns=new Sord();
         ns.level=5;
         temp1.s=ns;
+        temp1.childLevel=66;
 
         FileOutputStream fos=new FileOutputStream("Objects.txt");
         ObjectOutputStream ous=new ObjectOutputStream(fos);
@@ -19,11 +20,12 @@ public class Main {
 
         FileInputStream fis=new FileInputStream("Objects.txt");
         ObjectInput oi=new ObjectInputStream(fis);
-        Template tempWithFile=(Template)oi.readObject();
+        TemplateChild tempWithFile=(TemplateChild)oi.readObject();
         oi.close();
         System.out.println(tempWithFile.live_level);
         System.out.println(tempWithFile.pole);
         System.out.println(tempWithFile.s);
+        System.out.println(tempWithFile.childLevel);
 
     }
 }
