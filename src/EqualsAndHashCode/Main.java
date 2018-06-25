@@ -10,7 +10,6 @@ class Book{
 
 class Ticket{
     int number;
-    String libraryName;
 
     @Override
     public boolean equals(Object o) {
@@ -19,15 +18,12 @@ class Ticket{
 
         Ticket ticket = (Ticket) o;
 
-        if (number != ticket.number) return false;
-        return libraryName.equals(ticket.libraryName);
+        return number == ticket.number;
     }
 
     @Override
     public int hashCode() {
-        int result = number;
-        result = 31 * result + libraryName.hashCode();
-        return result;
+        return number;
     }
 }
 public class Main {
