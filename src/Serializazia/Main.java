@@ -1,3 +1,5 @@
+package Serializazia;
+
 import java.io.*;
 
 public class Main {

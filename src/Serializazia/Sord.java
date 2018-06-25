@@ -1,4 +1,4 @@
-import java.io.Serializable;
+package Serializazia;
 
 public class Sord{
     int level;

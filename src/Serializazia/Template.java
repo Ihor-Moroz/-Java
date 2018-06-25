@@ -1,6 +1,8 @@
+package Serializazia;
+
 import java.io.Serializable;
 
-public class Template{
+public class Template implements Serializable{
     int live_level;
     static int pole;
     transient Sord s;
