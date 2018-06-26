@@ -2,16 +2,11 @@ package SortCollections;
 
 import java.util.*;
 
-class Person implements Comparable<Person>{
+class Person{
     int age;
 
     public Person(int age) {
         this.age = age;
-    }
-
-    @Override
-    public int compareTo(Person p) {
-        return this.age-p.age;
     }
 
     @Override
@@ -22,9 +17,17 @@ class Person implements Comparable<Person>{
     }
 }
 
+class ComparePerson implements Comparator<Person>{
+    @Override
+    public int compare(Person o1, Person o2) {
+        return o1.age-o2.age;
+    }
+}
+
 public class Main {
     public static void main(String[] args) {
-        Set set=new TreeSet();
+        ComparePerson CP=new ComparePerson();
+        Set set=new TreeSet(CP);
         set.add(new Person(2));
         set.add(new Person(1));
         set.add(new Person(4));
