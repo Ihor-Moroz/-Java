@@ -15,7 +15,7 @@ public class Main <T extends Main & Comparable & Serializable> {
 
     T var;
 
-    public static void main(String[] args) throws Exception{
+    public static void main() throws Exception{
         Main<Car> main=new Main<>();
         main.var=new Car();
         System.out.println(main.method(main.var));
